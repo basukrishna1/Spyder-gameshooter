@@ -93,11 +93,63 @@
 	font-size: 19px;
 }
 #start{
+	padding: 5px;
+	font-size: 29px;
 	margin-left: -20px;
-	margin-top: -235px;
+	margin-top: -245px;
 	border-radius: 15px;
 	transform: rotate(90deg);
 	height: 40px;
 	width: 100px;
+	justify-content: center;
 	text-align: center;
+	background: lightpink;
+	box-shadow: 1px 1px 9px white;
+	cursor: pointer;
+}
+
+#instruction{
+	background: white;
+	margin-top: -150px;
+	margin-right: -200pc;
+	margin-left: 730px;
+   height: 161px;
+   width: 300px;
+   border: 5px solid green;
+   border-radius: 10px;
+}
+#heading{
+	margin: 2px;
+	padding: 2px;
+	text-align: center;
+	font-size: 25px;
+	font-weight: 600;
+}
+#image1{
+	text-align: top;
+	margin: 2px;
+	height: 20px;
+	width: 20px;
+}
+#image2{
+	margin: 2px;
+	height: 20px;
+	width: 20px;
+}
+#image3{
+	margin: 2px;
+	height: 20px;
+	width: 20px;
+}
+#nav{
+	margin: 4px;
+
+}
+.ser{
+	margin: 2px;
+	font-weight: 600;
+	cursor: pointer;
+}
+#scoring{
+	font-family: sans-serif;
 }

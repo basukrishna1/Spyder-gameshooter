@@ -5,12 +5,16 @@ let count=0;
 //to clear the current frame
 function starting(){
 	count+=1;
-	let l=document.getElementById("start")
+	let l=document.getElementById("start");
 	l.innerText="RESET";
+	if(count%2==0){
+	l.innerText="START";
+	window.location.reload();
+	}
 
   let x=10
   let y=110
-  let t=4;
+  let t=4.5;
 
 //Background Image
 function clear(){
@@ -138,16 +142,17 @@ function shoot(){
      {
      if(Math.abs(enemy[i].x-(x+50))<1 && Math.abs((enemy[i].y+15)-(y+25))< 40)
        {
-       	       
+       	        alert("Game Over")
        	       	cancelAnimationFrame(animation)
        	       	clearInterval(timer)
        	       	highscore.innerText=score;
+       	       	anotherreload();
 
        }
       }
    	for(j=0;j<bullet.length;j++)
    	{ 
-   		if(Math.abs(enemy[i].x-bullet[j].x1)<=1 && Math.abs((enemy[i].y+15)-bullet[j].y1)<=20)
+   		if(Math.abs(enemy[i].x-bullet[j].x1)<=5 && Math.abs((enemy[i].y+15)-bullet[j].y1)<=15)
    			if(level%3==0)
    			{ 
           enemy.splice(i,1);
@@ -256,4 +261,92 @@ if(min>59){
 
 let timer=setInterval(time);
 
-} 
+
+
+
+
+
+//for Todo list
+
+let newtodo=""
+function assign(stringy){
+   newtodo=stringy;
+}
+
+
+function anotherreload() {
+  text=score;
+  if(localStorage.getItem(newtodo)==null)
+{
+  
+   jsonstring=[];
+   jsonstring.push([text]);
+   localStorage.setItem(newtodo,JSON.stringify(jsonstring));
+}
+else
+{ 
+  jsonstring1= localStorage.getItem(newtodo);
+  jsonstring= JSON.parse(jsonstring1);
+  jsonstring.push([text]);
+  localStorage.setItem(newtodo,JSON.stringify(jsonstring));
+}
+reload();
+
+}
+
+
+let max=0;
+function reload(){ 
+    if(localStorage.getItem(newtodo)==null)
+{
+  
+   jsonstring=[];
+}
+else
+{ 
+  jsonstring1= localStorage.getItem(newtodo);
+  jsonstring= JSON.parse(jsonstring1);
+}
+
+let data="";
+console.log(newtodo)
+let display=document.getElementById("highscore")
+jsonstring.forEach((element,index)=>
+{   
+	
+	data+=`<p id="highscore">High Score:<span id="hs">${element}</span></p>`
+  
+}
+)
+
+display.innerHTML=data
+}
+}
+let pos=document.getElementById("scoring")
+function chart(){
+  pos.innerHTML=`<span><img src="22.png" id="image1"><span class="asd">-requires 3 bullets(30 points)</span></span>
+          <p><img src="34.png" id="image2"><span>-requires 2 bullets(15 points)</span></p>
+          <p><img src="35.png" id="image3"><span>-requires 1 bullets(5 points)</span></p>`
+          
+          
+
+}
+function bns(){
+	pos.innerHTML=`<p>1.At every level which is multiple of 3 Bonus level initiates</p>
+            <p>2.You will not die (Invincible)</p>
+            <p>3.Every type of enemy will require only 1 shot</p>`
+}
+
+
+function control(){
+	pos.innerHTML=`<p>Up Arrow:To move up</p>
+            <p>Down Arrow:To move down</p>
+            <p>Left Arrow:To move left</p>
+            <p>Right Arrow:To move reft</p>
+            <p>Space:To Shoot</p>`
+}
+function leveler(){
+	pos.innerHTML=`  
+          <p>1.After every 1 min level increases(starting from 30 sec) </p>
+          <p>2.As level increases speed of incoming enemy increases </p>`
+}
