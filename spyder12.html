@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Game</title>
+	<link rel="stylesheet" type="text/css" href="canvas.css">
+</head>
+<body id="body">
+   <canvas id="canvas" width="700" height="440" style="border: 5px solid white "></canvas>
+   <div id="clock">
+      <div class="brick" id="hour"><span id="q">00</span>
+         <p class="time" id="hour1" >Min</p>
+        </div>
+        <div class="brick" id="min"><span id="w">00</span>
+         <p class="time" id="min1">Sec</p>
+        </div>
+        <div class="brick" id="sec"><span id="u">00</span>
+         <p class="time" id="sec1">Milli</p>
+        </div>
+    </div>
+    <div id="score">
+      <p id="level">Level:<span id="levels"></span></p>
+      <p id="score1">Score:<span id="value">00</span></p>
+      <p id="highscore">High Score:<span id="hs">0</span></p>
+    </div>
+    <button id="start" onclick="starting()">START</button>
+   <script src="canvas.js"> </script>
+</body>
+</html>
