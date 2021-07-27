@@ -309,12 +309,11 @@ else
 }
 
 let data="";
-console.log(newtodo)
+
 let display=document.getElementById("highscore")
 jsonstring.forEach((element,index)=>
 {   
-	
-	data+=`<p id="highscore">High Score:<span id="hs">${element}</span></p>`
+	data+=`<p id="highscore">Previous Scores:<span id="hs">${element}</span></p>`
   
 }
 )
@@ -322,31 +321,36 @@ jsonstring.forEach((element,index)=>
 display.innerHTML=data
 }
 }
+
+
 let pos=document.getElementById("scoring")
 function chart(){
   pos.innerHTML=`<span><img src="22.png" id="image1"><span class="asd">-requires 3 bullets(30 points)</span></span>
           <p><img src="34.png" id="image2"><span>-requires 2 bullets(15 points)</span></p>
-          <p><img src="35.png" id="image3"><span>-requires 1 bullets(5 points)</span></p>`
+          <p><img src="35.png" id="image3"><span>-requires 1 bullets(5 points)</span></p>
+          <p> 4.<b>Bonus Points</b>= 50 points for surviving every 1 min(starting from 30sec)</p>`
           
           
 
 }
 function bns(){
-	pos.innerHTML=`<p>1.At every level which is multiple of 3 Bonus level initiates</p>
-            <p>2.You will not die (Invincible)</p>
-            <p>3.Every type of enemy will require only 1 shot</p>`
+	pos.innerHTML=`<p><b>1</b>.At every level which is multiple of 3 Bonus level initiates</p>
+            <p><b>2</b>.You will not die (Invincible)</p>
+            <p><b>3</b>.Every type of enemy will require only 1 shot</p>
+            <p><b>4</b>.Each Enemy kill points =15 `
 }
 
 
 function control(){
-	pos.innerHTML=`<p>Up Arrow:To move up</p>
-            <p>Down Arrow:To move down</p>
-            <p>Left Arrow:To move left</p>
-            <p>Right Arrow:To move reft</p>
-            <p>Space:To Shoot</p>`
+	pos.innerHTML=`<p><b>Up</b> Arrow:To move up</p>
+            <p><b>Down</b> Arrow:To move down</p>
+            <p><b>Left</b> Arrow:To move left</p>
+            <p><b>Right</b> Arrow:To move reft</p>
+            <p><b>Space</b>:To Shoot</p>`
 }
 function leveler(){
 	pos.innerHTML=`  
-          <p>1.After every 1 min level increases(starting from 30 sec) </p>
-          <p>2.As level increases speed of incoming enemy increases </p>`
+          <p><b>1</b>.After every 1 min level increases(starting from 30 sec) </p>
+          <p><b>2</b>.As level increases speed of incoming enemy increases </p>`
 }
+
