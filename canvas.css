@@ -3,7 +3,8 @@
 	padding: 0;
 }
 #body{
-	display: grid;
+	height: 100%;
+    display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	margin: 20px;
 	background-color: #000F0F;
@@ -154,5 +155,5 @@
 	cursor: pointer;
 }
 #scoring{
-	font-family: sans-serif;
+	font-family: Comic Sans MS;
 }

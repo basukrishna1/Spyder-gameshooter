@@ -79,7 +79,7 @@ draw()
   	ctx.beginPath()
 	  ctx.arc(this.x1,this.y1,this.radius,this.start,this.end)
     ctx.fill();
-    this.x1=this.x1+1;
+    this.x1=this.x1+2;
 
 
   }
@@ -264,8 +264,6 @@ let timer=setInterval(time);
 
 
 
-
-
 //for Todo list
 
 let newtodo=""
@@ -354,3 +352,18 @@ function leveler(){
           <p><b>2</b>.As level increases speed of incoming enemy increases </p>`
 }
 
+
+let data="";
+let jsonstring=[]
+let newtodo=""
+jsonstring1= localStorage.getItem(newtodo);
+jsonstring= JSON.parse(jsonstring1);
+let display=document.getElementById("highscore")
+jsonstring.forEach((element,index)=>
+{   
+  data+=`<p id="highscore">Previous Scores:<span id="hs">${element}</span></p>`
+  
+}
+)
+
+display.innerHTML=data
